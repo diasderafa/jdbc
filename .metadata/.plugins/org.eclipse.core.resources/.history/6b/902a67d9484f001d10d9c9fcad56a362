@@ -1,0 +1,10 @@
+package br.com.alura.jdbc.dao;
+
+public class CategoriaDAO {
+
+	private Connection connection;
+
+	public CategoriaDAO(Connection connection) {
+		this.connection = connection;
+	}
+}

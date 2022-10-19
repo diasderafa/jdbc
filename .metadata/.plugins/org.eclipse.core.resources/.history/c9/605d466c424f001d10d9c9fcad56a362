@@ -1,0 +1,9 @@
+package br.com.alura.jdbc.modelo;
+
+public class TestaInsercaoComProduto {
+
+	public static void main(String[] args) {
+		
+		Produto comoda = new Produto("Comoda", "Comoda Vertical");
+	}
+}

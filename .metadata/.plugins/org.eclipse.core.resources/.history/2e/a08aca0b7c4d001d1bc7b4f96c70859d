@@ -1,0 +1,19 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class TestaListagem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// abrir conexão
+		Connection connection = DriverManager.getConnection(
+				"jdbc:mysql://localhost/loja_virtual?useTimezone=true&serverTimezone=UTC", "root", "HPsmite189");
+		System.out.println("Conexão realizada.");
+
+		// fechar conexão
+		connection.close();
+		System.out.println("Conexão fechada.");
+	}
+
+}

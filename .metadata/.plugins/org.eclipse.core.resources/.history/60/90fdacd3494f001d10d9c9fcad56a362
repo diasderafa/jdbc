@@ -1,0 +1,17 @@
+import java.sql.Connection;
+import java.util.List;
+
+import br.com.alura.jdbc.ConnectionFactory;
+import br.com.alura.jdbc.dao.CategoriaDAO;
+import br.com.alura.jdbc.modelo.Categoria;
+
+public class TestaListagemDeCategorias {
+
+	public static void main(String[] args) {
+
+		try (Connection connection = new ConnectionFactory().recuperarConexao()) {
+			CategoriaDAO categoriaDao = new CategoriaDAO(connection);
+			List<Categoria> listaDeCategorias = categoriaDao.listar();
+		}
+	}
+}

@@ -1,0 +1,29 @@
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class TestaInsercao {
+
+	public static void main(String[] args) throws SQLException {
+
+		// conexão com MYSQL
+		ConnectionFactory connectionFactory = new ConnectionFactory();
+		Connection connection = connectionFactory.recuperarConexao();
+		
+		// statement para retorno com generated keys
+		Statement stm = connection.createStatement();
+		stm.execute("INSERT INTO PRODUTO (nome, descricao) VALUES ('MOUSE', 'MOUSE SEM FIO')", Statement.RETURN_GENERATED_KEYS);
+		
+		// resultado das generated kets realizadas acima
+		ResultSet rst = stm.getGeneratedKeys();
+		while(rst.next()) {
+			String nome = rst.getString(2);
+			System.out.println("Produto: " + nome);
+			Integer id = rst.getInt(1);
+			System.out.println("O ID criado foi: " + id);			
+		}
+		
+	}
+
+}

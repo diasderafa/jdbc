@@ -1,0 +1,13 @@
+import java.util.List;
+
+import br.com.alura.jdbc.dao.CategoriaDAO;
+
+public class TestaListagemDeCategorias {
+
+	public static void main(String[] args) {
+
+		CategoriaDAO categoriaDao = new CategoriaDao(connection);
+		List<Categoria> listaDeCategorias = categoriaDAO.listar();
+	}
+
+}

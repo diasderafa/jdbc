@@ -1,0 +1,18 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+
+public class ConnectionFactory {
+
+	// c3p0  - lib de data source do mysql
+	public ConnectionFactory() {
+		ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
+	}
+	
+	public Connection recuperarConexao() throws SQLException {
+		return DriverManager.getConnection("jdbc:mysql://localhost/loja_virtual?useTimezone=true&serverTimezone=UTC",
+				"root", "HPsmite189");
+	}
+}
